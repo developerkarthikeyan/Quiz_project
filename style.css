@@ -1,0 +1,151 @@
+ *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+ }
+
+ .header{
+   background: radial-gradient(circle at center, red, blue);
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+ }
+ body{
+    background: linear-gradient(112.1deg, rgb(32, 38, 57) 11.4%, rgb(63, 76, 119) 70.2%);
+ }
+#quiz-container{
+   width: auto;
+   height: 70vh;
+   padding: 0.5rem 0.5rem;
+   background-color: whitesmoke;
+   /* display: flex; */
+   
+margin-top: 140px;
+border-radius: 20px;
+animation-name: containerAnimation;
+animation-duration: 2s;
+}
+@keyframes  containerAnimation {
+   0%{
+      transform: translateX(-200%);
+   }
+   100%{
+      transform: translateX(none);
+   }
+}
+.animation{
+animation-name: buttonaniamtion;
+animation-duration: 3s;
+}
+@keyframes buttonaniamtion  {
+   0%{
+      transform: translateX(-40%);
+   }
+   100%{
+      transform: translateX(none);
+   }
+}
+.animationbutton{
+   transform:scale(1);
+   transition: 2s;
+   
+}
+.restart{
+display: none;
+}
+#restartButton{
+    width: auto;
+   border-radius: 15px; 
+}
+.restartbutton{
+   display: block;
+}
+button{
+   width: 100%;
+   /* padding: 0.8rem 0.8rem; */
+border: 0.5px solid gray;
+padding: 0.8rem 0.9rem;
+
+}
+
+
+ button.no:hover{
+   background-color: inherit;
+ }
+ .btncolor{
+   background-color: green;
+ }
+ .btncolorwrong{
+   background-color: red;
+ }
+
+.color{
+   background-color: white;
+}
+#prev-btn{
+   width: 100px;
+   border-radius: 10px;
+
+}
+#next-btn{
+   width: 100px;
+   /* margin-left: 160px;  */
+   border-radius: 10px;
+   position: absolute;
+right: 0;
+
+}
+.twobutton{
+   margin-top: 20px;
+
+}
+@media only screen and (min-width: 768px) {
+   /* Adjustments for desktop */
+   #quiz-container {
+       width: 60%; /* Adjust width as needed */
+       position: relative;/* Center the container */
+       left: 20%;
+       height: 70vh;
+   }
+
+   button {
+       width: 100%; /* Adjust button width as needed */
+       font-size: 1.2rem;      }
+
+   #next-btn {
+       position: absolute; /* Reset position for desktop */
+     right: 0; /* Adjust margin as needed */
+     margin-right: 10px;
+   }
+}
+.result{
+   text-align: center;
+   /* border: 1px solid black; */
+   border-radius: 10px;
+   position:absolute;
+   left: 35%;
+   bottom:4.5rem;
+ width: 30%;
+ color: wheat;
+ font-size: 20px;
+background: #8ADC79;
+background: linear-gradient(90deg, #8ADC79, #130DC6);
+   animation-name: resultAnimation;
+   animation-duration: 2s;
+ 
+}
+@keyframes resultAnimation {
+   0%{
+      transform: translateY(-400%);
+   }
+   100%{
+      transform: translateY(none);
+   }
+}
+.questionno{
+   position: absolute;
+   left: 1rem;
+   font-size: 1.5rem;
+}
+#question{
+   margin-left: 1.8rem;
+}

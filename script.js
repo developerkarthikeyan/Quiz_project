@@ -189,6 +189,15 @@ prevbutton.addEventListener("click",function prevQuestion() {
         currentquestion_index--;
         question_Number--;
         showquestion(currentquestion_index,question_Number);
+
+   var optionsElement = document.getElementById("options"); // Get the element here
+        showquestion(currentquestion_index, question_Number);
+
+        optionsElement.querySelectorAll("button").forEach(btn => {
+
+        
+          btn.disabled = true;
+      
     }
   
     }

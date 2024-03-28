@@ -135,6 +135,7 @@ nextbutton.addEventListener("click", function nextquestion() {
 // Function to display current question
 function showquestion(index,Question_Num,questionElement) {
     var optionsElement = document.getElementById("options");
+    console.log(optionsElement)
     var questionElement = document.getElementById("question");
 
 let questposition=document.querySelector(".questionno");
@@ -163,11 +164,11 @@ let questposition=document.querySelector(".questionno");
             if (element.correct) {
                 count++;
                 button.classList.add("btncolor");
+              button.classList.add("animationbutton")
+
                button.classList.remove("no")
                 console.log("Count:", count);
-               button.classList.add("animationbutton")
-
-            } else {
+             } else {
                 button.classList.add("btncolorwrong");
                button.classList.add("animationbutton")
 
@@ -179,7 +180,11 @@ let questposition=document.querySelector(".questionno");
         });
     });
 }
-
+function btndisabled(){
+  optionsElement.querySelectorAll("button").forEach(btn => {
+    btn.disabled = true;
+  })
+}
 // Call showquestion to display the initial question
 showquestion(currentquestion_index,question_Number);
 
@@ -188,20 +193,21 @@ prevbutton.addEventListener("click",function prevQuestion() {
     if (currentquestion_index > 0) {
         currentquestion_index--;
         question_Number--;
-        showquestion(currentquestion_index,question_Number);
 
-   var optionsElement = document.getElementById("options"); // Get the element here
+        // showquestion(currentquestion_index,question_Number,);
+        var optionsElement = document.getElementById("options"); // Get the element here
         showquestion(currentquestion_index, question_Number);
 
         optionsElement.querySelectorAll("button").forEach(btn => {
 
         
           btn.disabled = true;
-      
-    }
+        
+    })
   
-    }
-)
+  }
+    })
+
 //function for changing name in the next buttton
 function displayresult(){
   nextbutton.textContent="submit"
